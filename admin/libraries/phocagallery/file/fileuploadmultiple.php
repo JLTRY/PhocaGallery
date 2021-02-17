@@ -33,46 +33,44 @@ class PhocaGalleryFileUploadMultiple
 		$uploadMethod 	= $paramsC->get( 'multiple_upload_method', 4 );
 
 		//First load mootools, then jquery and set noConflict
-		Joomla\CMS\HTML\HTMLHelper::_('behavior.framework', true);// Load it here to be sure, it is loaded before jquery
-		Joomla\CMS\HTML\HTMLHelper::_('jquery.framework', false);// Load it here because of own nonConflict method (nonconflict is set below)
+		//JHtml::_('behavior.framework', true);// Load it here to be sure, it is loaded before jquery
+		//JHtml::_('jquery.framework', false);// Load it here because of own nonConflict method (nonconflict is set below)
 		$document	= JFactory::getDocument();
 		// No more used  - - - - -
-		//$document->addScript(JURI::root(true).'/media/com_phocagallery/js/jquery/jquery-1.6.4.min.js');//USE SYSTEM
+		//$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/jquery/jquery-1.6.4.min.js');//USE SYSTEM
 		//$nC = 'var pgJQ =  jQuery.noConflict();';//SET BELOW
 		//$document->addScriptDeclaration($nC);//SET BELOW
 		// - - - - - - - - - - - -
 
 		if ($uploadMethod == 2) {
-			//$document->addScript(JURI::root(true).'/media/com_phocagallery/js/plupload/gears_init.js');
+			//$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/gears_init.js');
 		}
 		if ($uploadMethod == 5) {
 			//$document->addScript('http://bp.yahooapis.com/2.4.21/browserplus-min.js');
 		}
-
+		$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/plupload.js');
 		HTMLHelper::_('script', 'media/com_phocagallery/js/plupload/plupload.js', array('version' => 'auto'));
 		if ($uploadMethod == 2) {
-			//$document->addScript(JURI::root(true).'/media/com_phocagallery/js/plupload/plupload.gears.js');
+			$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/plupload.gears.js');
 		}
 		if ($uploadMethod == 3) {
-			//$document->addScript(JURI::root(true).'/media/com_phocagallery/js/plupload/plupload.silverlight.js');
+			$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/plupload.silverlight.js');
 		}
 		if ($uploadMethod == 1) {
-			//$document->addScript(JURI::root(true).'/media/com_phocagallery/js/plupload/plupload.flash.js');
+			$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/plupload.flash.js');
 		}
 		if ($uploadMethod == 5) {
-			//$document->addScript(JURI::root(true).'/media/com_phocagallery/js/plupload/plupload.browserplus.js');
+			$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/plupload.browserplus.js');
 		}
 		if ($uploadMethod == 6) {
-
-			HTMLHelper::_('script', 'media/com_phocagallery/js/plupload/plupload.html4.js', array('version' => 'auto'));
+			$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/plupload.html4.js');
 		}
 		if ($uploadMethod == 4) {
-
-			HTMLHelper::_('script', 'media/com_phocagallery/js/plupload/plupload.html5.js', array('version' => 'auto'));
+			$document->addScript(JURI::root(true).'media/com_phocagallery/js/plupload/plupload.html5.js', array('version' => 'auto'));
 		}
 
-		HTMLHelper::_('script', 'media/com_phocagallery/js/plupload/jquery.plupload.queue/jquery.plupload.queue.js', array('version' => 'auto'));
-		HTMLHelper::_('stylesheet', 'media/com_phocagallery/js/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css', array('version' => 'auto'));
+		$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/plupload/jquery.plupload.queue/jquery.plupload.queue.js');
+		JHTML::stylesheet( 'components/com_phocagallery/assets/plupload/jquery.plupload.queue/css/jquery.plupload.queue.css' );
 	}
 
 	static public function getMultipleUploadSizeFormat($size) {

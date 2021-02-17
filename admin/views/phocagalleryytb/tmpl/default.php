@@ -9,6 +9,12 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License version 2 or later;
  */
 defined('_JEXEC') or die;
+// Load the tooltip behavior.
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
+JHtml::_('behavior.keepalive');
+JHtml::_('formbehavior.chosen', 'select');
 
 JFactory::getDocument()->addScriptDeclaration(
 'function importYtb(task) {

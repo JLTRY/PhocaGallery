@@ -22,6 +22,7 @@ phocagalleryimport('phocagallery.comment.commentcategory');
 phocagalleryimport('phocagallery.comment.commentimage');
 phocagalleryimport('phocagallery.picasa.picasa');
 phocagalleryimport( 'phocagallery.facebook.fbsystem');
+use Joomla\CMS\Factory;
 
 class PhocaGalleryViewCategory extends JViewLegacy
 {
@@ -100,6 +101,9 @@ class PhocaGalleryViewCategory extends JViewLegacy
 		$this->t['display_comment_img']		= $this->params->get( 'display_comment_img', 0 );
 		$this->t['display_subcategory']		= $this->params->get( 'display_subcategory', 1 );
 		$this->t['display_icon_detail'] 		= $this->params->get( 'display_icon_detail', 1 );
+		if ($this->t['display_icon_detail']  == 1) {
+			echo("1");
+		}
 		$this->t['display_icon_download'] 	= $this->params->get( 'display_icon_download', 2 );
 		$this->t['display_icon_pc']			= $this->params->get( 'display_icon_pc', 0 );
 		$this->t['display_icon_vm']			= $this->params->get( 'display_icon_vm', 0 );
@@ -333,7 +337,7 @@ class PhocaGalleryViewCategory extends JViewLegacy
 		// MODAL - will be displayed in case e.g. highslide or shadowbox too, because in there are more links
 
 		if ($this->t['disable_mootools_modal'] != 1) {
-			Joomla\CMS\HTML\HTMLHelper::_('behavior.modal', 'a.pg-modal-button');
+			//Joomla\CMS\HTML\HTMLHelper::_('behavior.modal', 'a.pg-modal-button');
 		}
 
 
@@ -1674,7 +1678,7 @@ class PhocaGalleryViewCategory extends JViewLegacy
 
 
 		$sess = JFactory::getSession();
-		$this->assignRef('session', $sess);
+		$this->session = $sess;
 		//$this->assignRef('uploadmaxsize', $upload_maxsize);
 		// END Upload Form - - - - - - - - - - - -
 

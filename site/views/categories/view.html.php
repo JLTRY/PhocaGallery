@@ -18,6 +18,7 @@ phocagalleryimport('phocagallery.picasa.picasa');
 phocagalleryimport('phocagallery.image.imagefront');
 phocagalleryimport('phocagallery.ordering.ordering');
 phocagalleryimport('phocagallery.render.rendermaposm');
+use Joomla\CMS\Uri\Uri;
 
 class PhocaGalleryViewCategories extends JViewLegacy
 {
@@ -124,7 +125,7 @@ class PhocaGalleryViewCategories extends JViewLegacy
 
 		// Masonry effect
 		if ($this->t['diff_thumb_height'] == 2) {
-			Joomla\CMS\HTML\HTMLHelper::_('jquery.framework', false);
+			JHtml::_('jquery.framework', false);
 			$document->addScript(JURI::base(true).'/media/com_phocagallery/js/masonry/masonry.min.js');
 
 			if ($this->t['masonry_center'] == 1) {
@@ -165,7 +166,7 @@ class PhocaGalleryViewCategories extends JViewLegacy
 			$hT = 'max-height';
 		}
 		if ($this->t['equal_heights'] == 1) {
-			Joomla\CMS\HTML\HTMLHelper::_('jquery.framework', false);
+			JHtml::_('jquery.framework', false);
 			$document->addScript(JURI::root(true).'/media/com_phocagallery/js/jquery.equalheights.min.js');
 			$document->addScriptDeclaration(
 			'jQuery(window).load(function(){

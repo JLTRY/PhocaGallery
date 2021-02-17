@@ -84,7 +84,7 @@ if ($this->require_ftp) {
 <input type="hidden" name="type" value="" />
 <input type="hidden" name="option" value="com_phocagallery" />
 <input type="hidden" name="task" value="phocagalleryt.themeinstall" />
-<?php echo Joomla\CMS\HTML\HTMLHelper::_( 'form.token' ); ?>
+<?php echo JHTML::_( 'form.token' ); ?>
 </form>
 
 <?php

@@ -11,6 +11,10 @@ defined('_JEXEC') or die;
 
 $task		= 'phocagalleryuser';
 
+JHtml::_('bootstrap.tooltip');
+JHtml::_('behavior.multiselect');
+JHtml::_('dropdown.init');
+JHtml::_('formbehavior.chosen', 'select');
 $r 			= $this->r;
 $app		= JFactory::getApplication();
 $option 	= $app->input->get('option');

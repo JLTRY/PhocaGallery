@@ -29,8 +29,9 @@ class phocaGalleryCpViewphocaGalleryLinkImg extends JViewLegacy
 		$this->r = new PhocaGalleryRenderAdminViews();
 		$this->t = PhocaGalleryUtils::setVars('linkimg');
 
-		//JHtml::_('behavior.tooltip');
+		JHtml::_('bootstrap.tooltip');
 		//JHtml::_('behavior.formvalidation');
+		HTMLHelper::_('behavior.formvalidator');
 		//JHtml::_('behavior.keepalive');
 		//JHtml::_('formbehavior.chosen', 'select');
 

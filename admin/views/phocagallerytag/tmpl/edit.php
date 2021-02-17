@@ -11,10 +11,11 @@ defined('_JEXEC') or die;
 
 $task		= 'phocagallerytag';
 
-//Joomla\CMS\HTML\HTMLHelper::_('behavior.tooltip');
-//Joomla\CMS\HTML\HTMLHelper::_('behavior.formvalidation');
-Joomla\CMS\HTML\HTMLHelper::_('behavior.keepalive');
-//Joomla\CMS\HTML\HTMLHelper::_('formbehavior.chosen', 'select');
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
+JHtml::_('behavior.keepalive');
+JHtml::_('formbehavior.chosen', 'select');
 
 $r 			= $this->r;
 $app		= JFactory::getApplication();

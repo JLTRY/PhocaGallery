@@ -75,9 +75,9 @@ class PhocaGalleryCpViewPhocaGalleryCo extends JViewLegacy
 			$db->setQuery($query);
 			$itemInfo = $db->loadObject();
 
-			if ($db->getErrorNum()) {
+			/*if ($db->getErrorNum()) {
 				throw new Exception($db->getErrorMsg(), 500);
-			}
+			}*/
 
 			return $itemInfo;
 		}

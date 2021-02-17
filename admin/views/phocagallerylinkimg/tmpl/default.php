@@ -14,7 +14,7 @@ $user 	= JFactory::getUser();
 //Ordering allowed ?
 $ordering = ($this->lists['order'] == 'a.ordering');
 
-//Joomla\CMS\HTML\HTMLHelper::_('behavior.tooltip');
+JHTML::_('bootstrap.tooltip');
 
 
 $js = '

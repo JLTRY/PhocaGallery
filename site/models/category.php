@@ -323,10 +323,10 @@ class PhocagalleryModelCategory extends JModelLegacy
 			. $published;
 		;
 		$this->_db->setQuery( $query );
-		if (!$this->_db->query()) {
-			$this->setError('Database Error 3');
-			return false;
-		}
+		// if (!$this->_db->loadResult()) {
+			// $this->setError('Database Error 3');
+			// return false;
+		// }
 		return $this->_db->loadRow();
 	}
 

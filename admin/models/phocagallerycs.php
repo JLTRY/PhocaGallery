@@ -118,10 +118,10 @@ class PhocaGalleryCpModelPhocaGalleryCs extends JModelList
 		$items	= $this->_getList($query);
 
 		// Check for a database error.
-		if ($this->_db->getErrorNum()) {
+		/*if ($this->_db->getErrorNum()) {
 			$this->setError($this->_db->getErrorMsg());
 			return false;
-		}
+		}*/
 
 		// Add the items to the internal cache.
 		$this->cache[$store] = $items;

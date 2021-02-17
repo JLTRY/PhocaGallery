@@ -10,6 +10,10 @@
  */
 defined('_JEXEC') or die('Restricted access');
 
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
+JHtml::_('formbehavior.chosen', 'select');
 $r = $this->r;
 echo '<div class="ph-item-list-box ph-item-list-box-admin">';
 echo $this->loadTemplate('up');

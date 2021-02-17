@@ -9,7 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 defined('_JEXEC') or die('Restricted access');
-//Joomla\CMS\HTML\HTMLHelper::_('behavior.tooltip');
+JHTML::_('bootstrap.tooltip');
 
 echo '<div id="phocagallery-links">'
 .'<fieldset class="adminform">'
