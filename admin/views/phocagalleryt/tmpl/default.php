@@ -9,7 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 defined('_JEXEC') or die('Restricted access');
-JHTML::_('behavior.tooltip'); ?>
+JHTML::_('bootstrap.tooltip'); ?>
 
 <script type="text/javascript">
 	Joomla.submitbutton = function(task)

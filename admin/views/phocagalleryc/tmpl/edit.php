@@ -10,9 +10,11 @@
 defined('_JEXEC') or die;
 
 $task		= 'phocagalleryc';
-
-JHtml::_('behavior.tooltip');
-JHtml::_('behavior.formvalidation');
+use Joomla\CMS\HTML\HTMLHelper;
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
+//JHtml::_('behavior.tooltip');
+HTMLHelper::_('bootstrap.tooltip');
 JHtml::_('behavior.keepalive');
 JHtml::_('formbehavior.chosen', 'select');
 
@@ -36,7 +38,7 @@ Joomla.submitbutton = function(task) {
         if (task == 'phocagalleryc.loadextimgi') {
             document.getElementById('loading-ext-imgi').style.display='block';
         }
-		<?php echo $this->form->getField('description')->save(); ?>
+		<?php //echo $this->form->getField('description')->save(); ?>
 		Joomla.submitform(task, document.getElementById('adminForm'));
 	}
 	else {

@@ -373,8 +373,8 @@ class PhocaGalleryViewDetail extends JViewLegacy
 
 
 		// ASIGN
-		$this->assignRef( 'tmpl', $this->tmpl );
-		$this->assignRef( 'item', $item );
+		$this->tmpl = $this->tmpl;
+		$this->item = $item;
 		$this->_prepareDocument($item);
 
 

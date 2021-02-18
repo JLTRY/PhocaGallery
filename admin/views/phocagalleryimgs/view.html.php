@@ -111,9 +111,9 @@ class PhocaGalleryCpViewPhocaGalleryImgs extends JViewLegacy
 		if ($canDo->get('core.create')) {
 
 			/*
-			$bar->appendButton( 'Custom', '<a href="#" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_MAKE_SELECTION').'\');}else{if(confirm(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_THUMBNAILS').'\')){submitbutton(\'phocagalleryimg.recreate\');}}" class="toolbar"><span class="icon-32-recreate" title="'.JText::_('COM_PHOCAGALLERY_RECREATE_THUMBS').'" type="Custom"></span>'.JText::_('COM_PHOCAGALLERY_RECREATE').'</a>');*/
+			$bar->appendButton( 'Custom', '<a href="#" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_MAKE_SELECTION').'\');}else{if(confirm(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_THUMBNAILS').'\')){Joomla.submitbutton(\'phocagalleryimg.recreate\');}}" class="toolbar"><span class="icon-32-recreate" title="'.JText::_('COM_PHOCAGALLERY_RECREATE_THUMBS').'" type="Custom"></span>'.JText::_('COM_PHOCAGALLERY_RECREATE').'</a>');*/
 
-			$dhtml = '<button class="btn btn-small" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_MAKE_SELECTION').'\');}else{if(confirm(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_THUMBNAILS').'\')){submitbutton(\'phocagalleryimg.recreate\');}}" ><i class="icon-recreate" title="'.JText::_('COM_PHOCAGALLERY_RECREATE_THUMBS').'"></i> '.JText::_('COM_PHOCAGALLERY_RECREATE_THUMBS').'</button>';
+			$dhtml = '<button class="btn btn-small" onclick="javascript:if(document.adminForm.boxchecked.value==0){alert(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_MAKE_SELECTION').'\');}else{if(confirm(\''.JText::_('COM_PHOCAGALLERY_WARNING_RECREATE_THUMBNAILS').'\')){Joomla.submitbutton(\'phocagalleryimg.recreate\');}}" ><i class="icon-recreate" title="'.JText::_('COM_PHOCAGALLERY_RECREATE_THUMBS').'"></i> '.JText::_('COM_PHOCAGALLERY_RECREATE_THUMBS').'</button>';
 			$bar->appendButton('Custom', $dhtml);
 
 		}

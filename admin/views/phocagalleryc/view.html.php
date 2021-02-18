@@ -43,7 +43,7 @@ class PhocaGalleryCpViewPhocaGalleryC extends JViewLegacy
 
 		$this->tmpl['enablepicasaloading'] = $paramsC->get( 'enable_picasa_loading', 1 );
 
-		JHTML::_('behavior.calendar');
+		//JHTML::_('behavior.calendar');
 		JHTML::stylesheet('media/com_phocagallery/css/administrator/phocagallery.css' );
 
 		//Data from model

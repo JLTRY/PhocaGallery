@@ -8,11 +8,12 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 defined('_JEXEC') or die;
-
+use Joomla\CMS\HTML\HTMLHelper;
 $task		= 'phocagalleryimg';
 
-JHtml::_('behavior.tooltip');
-JHtml::_('behavior.formvalidation');
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
 JHtml::_('formbehavior.chosen', 'select');
 
@@ -27,7 +28,7 @@ Joomla.submitbutton = function(task){
 	if (task != 'phocagalleryimg.cancel' && document.getElementById('jform_catid').value == '') {
 		alert('<?php echo $this->escape(JText::_('JGLOBAL_VALIDATION_FORM_FAILED')) . ' - '. $this->escape(JText::_('COM_PHOCAGALLERY_CATEGORY_NOT_SELECTED'));?>');
 	} else if (task == 'phocagalleryimg.cancel' || document.formvalidator.isValid(document.getElementById('adminForm'))) {
-		<?php echo $this->form->getField('description')->save(); ?>
+		<?php //echo $this->form->getField('description')->save(); ?>
 		Joomla.submitform(task, document.getElementById('adminForm'));
 	}
 	else {

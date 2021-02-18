@@ -9,7 +9,7 @@
  * @license   http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE.php
  */
 defined( '_JEXEC' ) or die( 'Restricted access' );
-
+use Joomla\CMS\HTML\HTMLHelper;
 class PhocaGalleryFileUploadMultiple
 {
 	public $method 		= 1;
@@ -31,8 +31,8 @@ class PhocaGalleryFileUploadMultiple
 		$uploadMethod 	= $paramsC->get( 'multiple_upload_method', 4 );
 
 		//First load mootools, then jquery and set noConflict
-		JHtml::_('behavior.framework', true);// Load it here to be sure, it is loaded before jquery
-		JHtml::_('jquery.framework', false);// Load it here because of own nonConflict method (nonconflict is set below)
+		//JHtml::_('behavior.framework', true);// Load it here to be sure, it is loaded before jquery
+		//JHtml::_('jquery.framework', false);// Load it here because of own nonConflict method (nonconflict is set below)
 		$document	= JFactory::getDocument();
 		// No more used  - - - - -
 		//$document->addScript(JURI::root(true).'/components/com_phocagallery/assets/jquery/jquery-1.6.4.min.js');//USE SYSTEM

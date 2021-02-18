@@ -14,8 +14,9 @@ class phocaGalleryCpViewphocaGalleryLinks extends JViewLegacy
 	function display($tpl = null) {
 
 		$app	= JFactory::getApplication();
-		JHtml::_('behavior.tooltip');
-		JHtml::_('behavior.formvalidation');
+		JHtml::_('bootstrap.tooltip');
+		//JHtml::_('behavior.formvalidation');
+		HTMLHelper::_('behavior.formvalidator');
 		JHtml::_('behavior.keepalive');
 		JHtml::_('formbehavior.chosen', 'select');
 

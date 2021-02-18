@@ -8,13 +8,14 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL
  */
 defined('_JEXEC') or die('Restricted access');
-
+use Joomla\CMS\HTML\HTMLHelper;
 $task		= 'phocagallerym';
 
 JHtml::_('bootstrap.tooltip');
 JHtml::_('behavior.multiselect');
 JHtml::_('dropdown.init');
 JHtml::_('formbehavior.chosen', 'select');
+HTMLHelper::_('behavior.formvalidator');
 
 $r 			=  new PhocaGalleryRenderAdminView();
 $app		= JFactory::getApplication();

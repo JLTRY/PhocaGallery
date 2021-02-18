@@ -256,8 +256,8 @@ if (!empty($this->items)) {
 				}
 			}
 
-			if ($cv->display_icon_detail == 1 	||
-			$cv->display_icon_download > 0 		||
+			if ($this->tmpl['display_icon_detail'] == 1 	||
+			$this->tmpl['display_icon_download'] > 0 		||
 			$cv->display_icon_vm 				||
 			$cv->display_icon_pc 				||
 			$cv->start_cooliris == 1 			||
@@ -281,7 +281,7 @@ if (!empty($this->items)) {
 				}
 
 				// ICON DETAIL
-				if ($cv->display_icon_detail == 1) {
+				if ($this->tmpl['display_icon_detail'] == 1) {
 
 					/*if ($this->tmpl['detail_window'] == 14) {
 						echo '<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">';
@@ -308,14 +308,14 @@ if (!empty($this->items)) {
 				}
 
 				// ICON DOWNLOAD
-				if ($cv->display_icon_download > 0) {
+				if ($this->tmpl['display_icon_download'] > 0) {
 					// Direct Download but not if there is a youtube
-					if ($cv->display_icon_download == 2 && $cv->videocode == '') {
+					if ($this->tmpl['display_icon_download'] == 2 && $cv->videocode == '') {
 						echo ' <a title="'. JText::_('COM_PHOCAGALLERY_IMAGE_DOWNLOAD').'"'
-							.' href="'.JRoute::_('index.php?option=com_phocagallery&view=detail&catid='.$cv->catslug.'&id='.$cv->slug. $this->tmpl['tmplcom'].'&phocadownload='.$cv->display_icon_download.'&Itemid='. $this->itemId ).'"';
+							.' href="'.JRoute::_('index.php?option=com_phocagallery&view=detail&catid='.$cv->catslug.'&id='.$cv->slug. $this->tmpl['tmplcom'].'&phocadownload='.$this->tmpl['display_icon_download'].'&Itemid='. $this->itemId ).'"';
 					} else {
 						echo ' <a class="'.$cv->buttonother->methodname.'" title="'.JText::_('COM_PHOCAGALLERY_IMAGE_DOWNLOAD').'"'
-							.' href="'.JRoute::_('index.php?option=com_phocagallery&view=detail&catid='.$cv->catslug.'&id='.$cv->slug. $this->tmpl['tmplcom'].'&phocadownload='.(int)$cv->display_icon_download.'&Itemid='. $this->itemId ).'"';
+							.' href="'.JRoute::_('index.php?option=com_phocagallery&view=detail&catid='.$cv->catslug.'&id='.$cv->slug. $this->tmpl['tmplcom'].'&phocadownload='.(int)$this->tmpl['display_icon_download'].'&Itemid='. $this->itemId ).'"';
 
 						echo PhocaGalleryRenderFront::renderAAttributeOther($this->tmpl['detail_window'], $cv->buttonother->options, $this->tmpl['highslideonclick'], $this->tmpl['highslideonclick2']);
 					}

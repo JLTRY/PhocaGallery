@@ -1,6 +1,6 @@
 <?php
 defined('_JEXEC') or die;
-JHTML::_('behavior.tooltip');
+JHTML::_('bootstrap.tooltip');
 
 echo '<form action="index.php" method="post" name="adminForm" id="phocagalleryin-form">';
 echo '<div id="j-sidebar-container" class="span2">'.$this->sidebar.'</div>';

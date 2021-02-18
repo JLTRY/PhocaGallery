@@ -18,6 +18,7 @@ phocagalleryimport('phocagallery.picasa.picasa');
 phocagalleryimport('phocagallery.image.imagefront');
 phocagalleryimport('phocagallery.ordering.ordering');
 phocagalleryimport('phocagallery.render.rendermaposm');
+use Joomla\CMS\Uri\Uri;
 
 class PhocaGalleryViewCategories extends JViewLegacy
 {
@@ -28,12 +29,12 @@ class PhocaGalleryViewCategories extends JViewLegacy
 
 		$app 						= JFactory::getApplication();
 		$user 						= JFactory::getUser();
-		$uri 						= \Joomla\CMS\Uri\Uri::getInstance();
+		$uri 						= JUri::getInstance();
 		$path						= PhocaGalleryPath::getPath();
-		$this->params				= $app->getParams();
+		$this->params					= $app->getParams();
 		$this->tmplGeo				= array();
 		$this->tmpl					= array();
-		$this->itemId				= $app->input->get('Itemid', 0, 'int');
+		$this->itemId					= $app->input->get('Itemid', 0, 'int');
 		$document					= JFactory::getDocument();
 		$library 					= PhocaGalleryLibrary::getLibrary();
 		$this->tmpl['action']		= $uri->toString();

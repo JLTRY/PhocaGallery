@@ -10,9 +10,10 @@
 defined('_JEXEC') or die;
 
 $task		= 'phocagallerycoimg';
-
-JHtml::_('behavior.tooltip');
-JHtml::_('behavior.formvalidation');
+use Joomla\CMS\HTML\HTMLHelper;
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
 JHtml::_('formbehavior.chosen', 'select');
 
@@ -25,7 +26,7 @@ $OPT		= strtoupper($option);
 	Joomla.submitbutton = function(task)
 	{
 		if (task == '<?php echo $task ?>.cancel' || document.formvalidator.isValid(document.getElementById('adminForm'))) {
-			<?php echo $this->form->getField('comment')->save(); ?>
+			<?php //echo $this->form->getField('comment')->save(); ?>
 			Joomla.submitform(task, document.getElementById('adminForm'));
 		}
 		else {

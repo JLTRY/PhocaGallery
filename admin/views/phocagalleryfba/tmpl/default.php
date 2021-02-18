@@ -10,7 +10,7 @@
  */
  
 defined('_JEXEC') or die('Restricted access');
-JHTML::_('behavior.tooltip');
+JHTML::_('bootstrap.tooltip');
 
 echo '<div id="phocagallery-fba">'. "\n"
 .'<h4>'.JText::_( 'COM_PHOCAGALLERY_FB_SELECT_ALBUM' ).'</h4>';

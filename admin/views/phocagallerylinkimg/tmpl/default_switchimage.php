@@ -14,7 +14,7 @@ $user 	= JFactory::getUser();
 //Ordering allowed ?
 $ordering = ($this->lists['order'] == 'a.ordering');
 
-JHTML::_('behavior.tooltip');
+JHTML::_('bootstrap.tooltip');
 ?>
 <script type="text/javascript">
 //<![CDATA[

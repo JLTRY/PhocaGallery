@@ -11,8 +11,9 @@ defined('_JEXEC') or die;
 
 $task		= 'phocagalleryimg';
 
-JHtml::_('behavior.tooltip');
-JHtml::_('behavior.formvalidation');
+JHtml::_('bootstrap.tooltip');
+//JHtml::_('behavior.formvalidation');
+HTMLHelper::_('behavior.formvalidator');
 JHtml::_('behavior.keepalive');
 JHtml::_('formbehavior.chosen', 'select');
 

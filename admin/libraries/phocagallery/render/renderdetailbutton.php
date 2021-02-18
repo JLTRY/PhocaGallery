@@ -400,8 +400,8 @@ class PhocaGalleryRenderDetailButton
 					$endComma = '';
 				}
 				
-				$filterTags		= '';
-				$filterAttrs	= '';
+				$filterTags		= array();
+				$filterAttrs	= array();
 				$filter	= new JFilterInput( $filterTags, $filterAttrs, 1, 1, 1 );
 				
 				
