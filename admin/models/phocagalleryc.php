@@ -9,11 +9,13 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License version 2 or later;
  */
 defined( '_JEXEC' ) or die();
+use Joomla\CMS\Factory;
 jimport('joomla.application.component.modeladmin');
 phocagalleryimport( 'phocagallery.utils.utils' );
 phocagalleryimport( 'phocagallery.picasa.picasa' );
 phocagalleryimport( 'phocagallery.facebook.fb' );
 phocagalleryimport( 'phocagallery.facebook.fbsystem' );
+
 
 class PhocaGalleryCpModelPhocaGalleryC extends JModelAdmin
 {
@@ -142,7 +144,7 @@ class PhocaGalleryCpModelPhocaGalleryC extends JModelAdmin
 	function approve(&$pks, $value = 1)
 	{
 		// Initialise variables.
-		$dispatcher	= JDispatcher::getInstance();
+		//$dispatcher	= JDispatcher::getInstance();
 		$user		= JFactory::getUser();
 		$table		= $this->getTable('phocagalleryc');
 		$pks		= (array) $pks;
@@ -234,7 +236,7 @@ class PhocaGalleryCpModelPhocaGalleryC extends JModelAdmin
 
 
 		// Initialise variables;
-		$dispatcher = JDispatcher::getInstance();
+		//$dispatcher = JDispatcher::getInstance();
 		$table		= $this->getTable();
 		$pk			= (!empty($data['id'])) ? $data['id'] : (int)$this->getState($this->getName().'.id');
 		$isNew		= true;
@@ -273,7 +275,7 @@ class PhocaGalleryCpModelPhocaGalleryC extends JModelAdmin
 			$this->setError($table->getError());
 			return false;
 		}*/
-
+		Factory::getApplication()->triggerEvent($this->event_before_save, array($this->option.'.'.$this->name, $table, $isNew, array()));
 		// Store the data.
 		if (!$table->store()) {
 			$this->setError($table->getError());
@@ -1810,7 +1812,7 @@ class PhocaGalleryCpModelPhocaGalleryC extends JModelAdmin
 		}
 	}
 
-	protected function storeImage($dataImg = array(), $catid, $type = 'picasa') {
+	protected function storeImage($dataImg = array(), $catid = 0, $type = 'picasa') {
 
 		if (count( $dataImg )) {
 

@@ -9,6 +9,7 @@
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License version 2 or later;
  */
 defined('_JEXEC') or die();
+use Joomla\CMS\Factory;
 jimport('joomla.application.component.modeladmin');
 phocagalleryimport('phocagallery.tag.tag');
 
@@ -142,7 +143,7 @@ class PhocaGalleryCpModelPhocaGalleryImg extends JModelAdmin
 	function approve(&$pks, $value = 1)
 	{
 		// Initialise variables.
-		$dispatcher	= JDispatcher::getInstance();
+		//$dispatcher	= JDispatcher::getInstance();
 		$user		= JFactory::getUser();
 		$table		= $this->getTable('phocagallery');
 		$pks		= (array) $pks;
@@ -261,7 +262,7 @@ class PhocaGalleryCpModelPhocaGalleryImg extends JModelAdmin
 
 
 		// Initialise variables;
-		$dispatcher = JDispatcher::getInstance();
+		//$dispatcher = JDispatcher::getInstance();
 		$table		= $this->getTable();
 		$pk			= (!empty($data['id'])) ? $data['id'] : (int)$this->getState($this->getName().'.id');
 		$isNew		= true;
@@ -300,7 +301,7 @@ class PhocaGalleryCpModelPhocaGalleryImg extends JModelAdmin
 			$this->setError($table->getError());
 			return false;
 		}*/
-
+		Factory::getApplication()->triggerEvent($this->event_before_save, array($this->option.'.'.$this->name, $table, $isNew, array()));
 		// Store the data.
 		if (!$table->store()) {
 			$this->setError($table->getError());
@@ -389,7 +390,7 @@ class PhocaGalleryCpModelPhocaGalleryImg extends JModelAdmin
 			$query = 'DELETE FROM #__phocagallery'
 				. ' WHERE id IN ( '.$cids.' )';
 			$this->_db->setQuery( $query );
-			if(!$this->_db->query()) {
+			if(!$this->_db->execute()) {
 				$this->setError($this->_db->getErrorMsg());
 				return false;
 			}
@@ -417,7 +418,7 @@ class PhocaGalleryCpModelPhocaGalleryImg extends JModelAdmin
 		return true;
 	}
 
-	function recreate($cid = array(), &$message) {
+	function recreate($cid = array(), &$message = '') {
 
 		if (count( $cid )) {
 			\Joomla\Utilities\ArrayHelper::toInteger($cid);

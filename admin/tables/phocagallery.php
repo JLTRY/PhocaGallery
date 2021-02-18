@@ -138,10 +138,10 @@ class TablePhocaGallery extends JTable
 		$this->_db->query();
 
 		// Check for a database error.
-		if ($this->_db->getErrorNum()) {
+		/*if ($this->_db->getErrorNum()) {
 			$this->setError($this->_db->getErrorMsg());
 			return false;
-		}
+		}*/
 
 		// If checkin is supported and all rows were adjusted, check them in.
 		if ($checkin && (count($pks) == $this->_db->getAffectedRows()))
